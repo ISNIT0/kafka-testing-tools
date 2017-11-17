@@ -1,0 +1,23 @@
+{
+    "ZooKeeper": {
+        "connectionString":""
+    },
+    "Kafka": {
+        "connectionString":"192.168.1.18:2181"
+    },
+    "radamsa": {
+        "patterns": [
+            "1 + (2 + (3 + 4))",
+            "HAL 9000"
+        ]
+    },
+    "producer": {
+        "interval": 500,
+        "batchSize": 100,
+        "port": 5000,
+        "continuous": {
+            "starting": 1,
+            "growth": 1
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "kafkatools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "franz-kafka": "^0.7.5",
+    "fuzzcat": "^0.8.0",
+    "kafka-node": "^2.2.3",
+    "messenger": "0.0.9",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
