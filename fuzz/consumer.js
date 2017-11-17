@@ -2,7 +2,7 @@ const config = require('../config.json');
 
 const kafka = require('kafka-node');
 const Consumer = kafka.Consumer;
-const client = new kafka.Client(config.Kafka.connectionString);
+const client = new kafka.Client(config.ZooKeeper.connectionString);
 const consumer = new Consumer(
     client, [{
         topic: 'test'

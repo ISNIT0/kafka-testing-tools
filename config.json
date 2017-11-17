@@ -1,6 +1,6 @@
 {
     "ZooKeeper": {
-        "connectionString": ""
+        "connectionString": "192.168.1.18:2181"
     },
     "Kafka": {
         "connectionString": "192.168.1.18:2181"

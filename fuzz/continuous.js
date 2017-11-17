@@ -8,7 +8,7 @@ let sentMessages = 0;
 
 const kafka = require('kafka-node');
 const Consumer = kafka.Consumer;
-const client = new kafka.Client('192.168.1.18:2181');
+const client = new kafka.Client(config.ZooKeeper.connectionString);
 const consumer = new Consumer(
     client, [{
         topic: 'test'
