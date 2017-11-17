@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 
 const config = require('../config.json');
 
+const md5 = require('md5');
 const kafka = require('kafka-node');
 const Producer = kafka.Producer;
 const client = new kafka.Client(config.Kafka.connectionString);
@@ -15,9 +16,13 @@ producer.on('ready', function () {
     app.use(bodyParser.json());
 
     app.post('/produce', (req, res) => {
-        const {
+        let {
             message
         } = req.body;
+
+        if(config.producer.encrypt) {
+            message += '~' + md5(message);
+        }
 
         producer.send([{
             topic: 'test',

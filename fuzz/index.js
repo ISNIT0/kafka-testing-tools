@@ -1,6 +1,7 @@
 const config = require('../config.json');
 const request = require('request-promise-native');
 const fuzz = require('./fuzz.js');
+const md5 = require('md5');
 
 let sentMessages = 0;
 
@@ -40,7 +41,13 @@ let messageCounter = 0;
 consumer.on('message', function (message) {
     if (message.value) {
         const now = Date.now();
-        const [text, ts, rand] = message.value.split('~'); //TODO: something better
+        const [text, ts, rand, md5hash] = message.value.split('~'); //TODO: something better
+        if (md5hash) {
+            const originalMessage = message.value.split('~').slice(0, -1).join('~');
+            if (md5hash !== md5(originalMessage)) {
+                console.warn(`Invalid message response, MD5 hashes didn't match: [${message.value}]`);
+            }
+        }
         const latency = now - Number(ts);
         if (latency) latencies = latencies.slice(-200).concat(Math.floor(latency));
         const avgLatency = Math.round(latencies.reduce((acc, val) => acc + val, 0) / latencies.length);
