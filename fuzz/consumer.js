@@ -16,6 +16,12 @@ let messageCounter = 0;
 
 consumer.on('message', function (message) {
     if (message.value) {
-        console.log(`Recieved Messages: [${messageCounter++}] [${String(message.value).slice(0,20)}]`);
+        let latency;
+        const now = Date.now();
+        try {
+            const [text, ts, rand, md5hash] = message.value.split('~'); //TODO: something better
+            latency = now - Number(ts);
+        } catch (err) {}
+        console.log(`Recieved Messages: [${messageCounter++}] [Latency: ${latency}] [${String(message.value).slice(0,100)}]`);
     }
 });

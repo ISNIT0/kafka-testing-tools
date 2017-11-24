@@ -7,7 +7,10 @@ const md5 = require('md5');
 const kafka = require('kafka-node');
 const Producer = kafka.Producer;
 const client = new kafka.Client(config.ZooKeeper.connectionString);
-const producer = new Producer(client);
+const producer = new Producer(client, [{
+    autoCommit: true,
+    fromOffset: false
+}]);
 
 producer.on('ready', function () {
     console.info(`Producer Ready`);
@@ -20,7 +23,7 @@ producer.on('ready', function () {
             message
         } = req.body;
 
-        if(config.producer.encrypt) {
+        if (config.producer.encrypt) {
             message += '~' + md5(message);
         }
 

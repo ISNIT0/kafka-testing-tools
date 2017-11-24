@@ -11,9 +11,12 @@
             "HAL 9000"
         ]
     },
+    "batch": {
+        "interval": "complete"
+    },
     "producer": {
-        "interval": 500,
-        "batchSize": 100,
+        "interval": 1000,
+        "batchSize": 20,
         "port": 5000,
         "encrypt": true,
         "continuous": {

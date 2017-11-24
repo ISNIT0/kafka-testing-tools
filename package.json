@@ -14,9 +14,11 @@
     "franz-kafka": "^0.7.5",
     "fuzzcat": "^0.8.0",
     "kafka-node": "^2.2.3",
+    "line-by-line": "^0.1.5",
     "md5": "^2.2.1",
     "messenger": "0.0.9",
     "request": "^2.83.0",
-    "request-promise-native": "^1.0.5"
+    "request-promise-native": "^1.0.5",
+    "yargs": "^10.0.3"
   }
 }

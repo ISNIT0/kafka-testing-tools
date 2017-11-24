@@ -11,5 +11,5 @@ function sh(command) {
 module.exports = (number = 20) => {
     const patterns = config.radamsa.patterns;
     const pattern = patterns[Math.floor(Math.random() * patterns.length)];
-    return sh(`echo "${pattern}" | radamsa --seed 12 -n ${number}`).trim().split('\n');
+    return sh(`echo "${pattern}" | radamsa -n ${number}`).trim().split('\n');
 };
