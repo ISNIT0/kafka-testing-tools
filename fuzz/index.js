@@ -18,7 +18,7 @@ setInterval(() => {
                 message: message
             },
             json: true
-        });
+        }).catch(err => console.error(`Error sending message to producer`));
     });
 }, config.producer.interval);
 

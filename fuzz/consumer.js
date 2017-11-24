@@ -16,6 +16,6 @@ let messageCounter = 0;
 
 consumer.on('message', function (message) {
     if (message.value) {
-        console.log(`Recieved Messages: [${messageCounter++}]`);
+        console.log(`Recieved Messages: [${messageCounter++}] [${String(message.value).slice(0,20)}]`);
     }
 });

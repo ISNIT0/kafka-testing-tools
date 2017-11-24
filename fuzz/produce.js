@@ -6,7 +6,7 @@ const config = require('../config.json');
 const md5 = require('md5');
 const kafka = require('kafka-node');
 const Producer = kafka.Producer;
-const client = new kafka.Client(config.Kafka.connectionString);
+const client = new kafka.Client(config.ZooKeeper.connectionString);
 const producer = new Producer(client);
 
 producer.on('ready', function () {

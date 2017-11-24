@@ -1,9 +1,9 @@
 {
     "ZooKeeper": {
-        "connectionString": "192.168.1.18:2181"
+        "connectionString": "192.168.1.153:2181"
     },
     "Kafka": {
-        "connectionString": "192.168.1.18:2181"
+        "connectionString": "192.168.1.163:9092"
     },
     "radamsa": {
         "patterns": [

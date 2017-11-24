@@ -10,12 +10,12 @@ Configure ip addresses in `./config.json`
 
 ## Run Scripts
 #### Consumer
-A simple Kafka consumer which will count recieved messages
+A simple Kafka consumer which will count received messages
 ```bash
 > node fuzz/consumer.js
 ```
 #### Continuous
-Starting with `config.producer.continuous.starting` messages, each time it recieves a message, it will create another `config.producer.continuous.grow` messages.
+Starting with `config.producer.continuous.starting` messages, each time it receives a message, it will create another `config.producer.continuous.grow` messages.
 ```bash
 > node fuzz/continuous.js
 ```

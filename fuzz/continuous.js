@@ -48,7 +48,7 @@ consumer.on('message', function (message) {
                     message: message
                 },
                 json: true
-            });
+            }).catch(err => console.error(`Failed to send message to producer:`, err));
         });
     }
 });
@@ -66,5 +66,5 @@ fuzzMessages.forEach(message => {
             message: message
         },
         json: true
-    });
+    }).catch(err => console.error(`Failed to send message to producer:`, err));
 });
