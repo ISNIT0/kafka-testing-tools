@@ -3,7 +3,7 @@
         "connectionString": "192.168.1.153:2181"
     },
     "Kafka": {
-        "connectionString": "192.168.1.163:9092"
+        "connectionString": "192.168.1.164:9092"
     },
     "radamsa": {
         "patterns": [
@@ -12,11 +12,11 @@
         ]
     },
     "batch": {
-        "interval": "complete"
+        "interval": 10
     },
     "producer": {
         "interval": 1000,
-        "batchSize": 20,
+        "batchSize": 4,
         "port": 5000,
         "encrypt": true,
         "continuous": {
