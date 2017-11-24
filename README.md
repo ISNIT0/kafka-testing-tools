@@ -3,6 +3,7 @@ Install and run ZooKeeper + Kafka on 1 or more machines.
 Configure ip addresses in `./config.json`
 
 > You will need Radamsa installed to run any producers.
+https://github.com/aoh/radamsa
 
 ```bash
 > npm i && npm i -g pm2
